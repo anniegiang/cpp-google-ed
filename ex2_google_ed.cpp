@@ -1,0 +1,37 @@
+// ex2_google_ed.cpp: Annie Giang
+// Description: get input from user.
+
+/*
+
+Enter the do while loop and stay there until either
+a non-numeric is entered, or -1 is entered. Note that
+cin will accept any integer, 4, 40, 400, etc.
+
+There are two steps to recovering from an error:
+Clear the error with cin.clear().
+Remove the incorrect characters from the stream. One way to do this is with cin.ignore().
+
+
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int input_var = 0;
+
+  do {
+  	cout << "Enter a number (-1 = quit): ";
+  	if(!(cin >> input_var)) {
+  		cout << "You entered a non-numeric. Exiting..." << endl;
+  		cin.clear();
+  		cin.ignore(10000,'\n');
+  	} if(input_var != -1) {
+  		cout << "You entered: " << input_var << endl;
+  	}
+  } while(input_var != -1);
+  cout << "All done!" << endl;
+
+  return 0;
+}
